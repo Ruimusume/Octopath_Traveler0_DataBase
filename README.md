@@ -13,9 +13,16 @@
 
 [Octopath Traveler0 EnemyWeak](https://htmlpreview.github.io/?//github.com/Ruimusume/Octopath_Traveler0_DataBase/blob/main/EnemyWeak.html)
 
+[Character_ID](https://htmlpreview.github.io/?//github.com/Ruimusume/Octopath_Traveler0_DataBase/blob/main/Character_ID.html)
+
+## Unpak
 repak + [oo2core_9_win64.dll](https://github.com/Ruimusume/Octopath_Traveler0_DataBase/raw/refs/heads/main/oo2core_9_win64.dll)<br>
 [https://github.com/trumank/repak/releases](https://github.com/trumank/repak/releases)<br>
 `repak.exe --aes-key 0x14A2B6A734EE06B2B011E847AFFCD1DB9CB46C049B1AA5E3F44CCFE332EF6CDA unpack pakchunk0-Switch.pak`
 
-JSON to CSV
+## uasset to json
+use [UAssetMessagePack.exe](https://github.com/Ruimusume/Octopath_Traveler0_DataBase/raw/refs/heads/main/UAssetMessagePack.7z) and [Mappings.usmap](https://github.com/Ruimusume/Octopath_Traveler0_DataBase/raw/refs/heads/main/Mappings.usmap) and [uasset to json.bat](https://github.com/Ruimusume/Octopath_Traveler0_DataBase/raw/refs/heads/main/uasset%20to%20json.bat)
+`UAssetMessagePack.exe tojson xxx.uasset xxx.json VER_UE5_4 Mappings.usmap`
+
+## JSON to CSV
 [https://data.page/json/csv](https://data.page/json/csv)
