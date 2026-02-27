@@ -139,7 +139,28 @@
 </div>
 <div class="address-container">
   <div class="address-title">角色ID表 GameTextCharacter</div>
-  <div class="address-subtitle">游戏为动态添加数值到内存，如需修改角色参数等需对照ID定位修改</div>
+  <div class="address-subtitle">游戏为动态添加数值到内存，如需修改角色参数等需对照ID定位修改<br>
+    角色数值+0x6C为下一个角色<br>
+    JP位置+0x50为下一个角色<br>
+    Switch v1.0.4用指针</div>
+  <div class="address-code">角色 ID	[[[main+07CC8B40]+2C8]+138]+0000<br>
+    角色 EXP	[[[main+07CC8B40]+2C8]+138]+0008<br>
+    角色 LV	[[[main+07CC8B40]+2C8]+138]+000C<br>
+    角色 当前HP	[[[main+07CC8B40]+2C8]+138]+0010<br>
+    角色 当前SP	[[[main+07CC8B40]+2C8]+138]+0014<br>
+    角色 最大HP（附加）	[[[main+07CC8B40]+2C8]+138]+002C<br>
+    角色 最大SP（附加）	[[[main+07CC8B40]+2C8]+138]+0030<br>
+    角色 物攻（附加）	[[[main+07CC8B40]+2C8]+138]+0034<br>
+    角色 物防（附加）	[[[main+07CC8B40]+2C8]+138]+0038<br>
+    角色 属攻（附加）	[[[main+07CC8B40]+2C8]+138]+003C<br>
+    角色 属防（附加）	[[[main+07CC8B40]+2C8]+138]+0040<br>
+    角色 速度（附加）	[[[main+07CC8B40]+2C8]+138]+0044<br>
+    角色 会心（附加）	[[[main+07CC8B40]+2C8]+138]+0048<br>
+    角色 命中（附加）	[[[main+07CC8B40]+2C8]+138]+004C<br>
+    角色 回避（附加）	[[[main+07CC8B40]+2C8]+138]+0050<br>
+    <br>
+    角色 ID	[[[main+07CC8B40]+2C8]+178]<br>
+    角色 JP	[[[main+07CC8B40]+2C8]+178]+04</div>
 </div>
 <table class="ot0-table">
   <tr>
