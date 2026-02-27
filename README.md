@@ -25,5 +25,5 @@ repak + [oo2core_9_win64.dll](https://github.com/Ruimusume/Octopath_Traveler0_Da
 use [UAssetMessagePack.exe](https://github.com/Ruimusume/Octopath_Traveler0_DataBase/raw/refs/heads/main/UAssetMessagePack.7z) and [Mappings.usmap](https://github.com/Ruimusume/Octopath_Traveler0_DataBase/raw/refs/heads/main/Mappings.usmap) and [uasset to json.bat](https://github.com/Ruimusume/Octopath_Traveler0_DataBase/raw/refs/heads/main/uasset%20to%20json.bat)<br>
 `UAssetMessagePack.exe tojson xxx.uasset xxx.json VER_UE5_4 Mappings.usmap`
 
-## JSON to CSV
+## json to csv
 [https://data.page/json/csv](https://data.page/json/csv)
