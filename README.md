@@ -1,4 +1,5 @@
 # Octopath Traveler0 DataBase
+![Github latest downloads](https://img.shields.io/github/downloads/Ruimusume/Octopath_Traveler0_DataBase/total.svg)
 <div align="center"><img height="256" alt="image" src="https://github.com/Ruimusume/Octopath_Traveler0_DataBase/blob/main/Loading_Icon.png?raw=true" /><img height="256" alt="image" src="https://github.com/Ruimusume/Octopath_Traveler0_DataBase/blob/main/Title_Logo.png?raw=true" /></div>
 
 <table>
