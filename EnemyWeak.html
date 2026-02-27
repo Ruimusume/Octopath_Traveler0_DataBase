@@ -3,56 +3,72 @@
 <head>
 <meta charset="utf-8">
 <title>歧路旅人0 / OCTOPATH TRAVELER 0 EnemyWeak by Ruimusume（露易娘）</title>
-</head>
-<body>
 <style>
 .ot0-table {
     width: 100%;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     margin: 20px 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
 }
+
 .ot0-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #4a6fa5;
+}
+
+.ot0-table thead tr {
     background-color: #4a6fa5;
     color: white;
 }
+
 .ot0-table th {
     padding: 12px 8px;
     font-weight: bold;
     text-align: center;
     border-bottom: 3px solid #3a5a8a;
+    background-color: #4a6fa5;
+    color: white;
+    position: relative;
+    z-index: 100;
 }
-.ot0-table td {
+
+.ot0-table tbody td {
     padding: 10px 8px;
     text-align: center;
     border-bottom: 1px solid #e0e0e0;
     vertical-align: middle;
 }
+
 .ot0-table tbody tr:nth-child(even) {
     background-color: #f8f9fa;
 }
+
 .ot0-table tbody tr:nth-child(odd) {
     background-color: white;
 }
+
 .ot0-table tbody tr:hover {
     background-color: #e8f4ff;
     transition: background-color 0.2s ease;
 }
-.ot0-table td:first-child {
+
+.ot0-table tbody td:first-child {
     font-weight: bold;
     color: #333;
     background-color: #f0f3f8;
 }
+
 .ot0-table td img {
     display: block;
     margin: 0 auto;
-    border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	width: 26px;
 }
+
 .address-container {
     background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
     border-left: 6px solid #4a6fa5;
@@ -64,10 +80,12 @@
     color: #333;
     transition: all 0.3s ease;
 }
+
 .address-container:hover {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     transform: translateY(-2px);
 }
+
 .address-title {
     font-size: 22px;
     font-weight: 800;
@@ -76,6 +94,7 @@
     padding-bottom: 8px;
     border-bottom: 2px dashed #c8d6e5;
 }
+
 .address-subtitle {
     font-size: 15px;
     color: #546e7a;
@@ -83,6 +102,7 @@
     line-height: 1.5;
     font-weight: 500;
 }
+
 .address-code {
     background-color: #2d3436;
     color: #dfe6e9;
@@ -99,6 +119,7 @@
     white-space: nowrap;
     box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
 }
+
 .address-note {
     font-size: 14px;
     color: #7f8c8d;
@@ -108,6 +129,7 @@
     border-top: 1px solid #dcdde1;
     text-align: center;
 }
+
 @media (max-width: 768px) {
     .address-code {
         font-size: 16px;
@@ -123,24 +145,26 @@
 
 .table-container {
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: auto;
     margin: 30px 0 40px 0;
     border-radius: 16px;
     background: #ffffff;
-	height: 1000px;
+    height: 1000px;
+    max-height: 1000px;
     box-shadow: 0 10px 30px -5px rgba(0, 20, 40, 0.15),
                 0 2px 8px rgba(0,0,0,0.02);
     border: 1px solid rgba(74, 111, 165, 0.2);
-    transition: box-shadow 0.2s ease;
+    
+    position: relative;
     
     scrollbar-width: thin;
     scrollbar-color: #4a6fa5 #e0e7f0;
-    
     min-height: 50px;
 }
 
 .table-container::-webkit-scrollbar {
     height: 14px;
+    width: 14px;
     background-color: #f0f3f8;
     border-radius: 8px;
 }
@@ -173,6 +197,7 @@
     }
     .table-container::-webkit-scrollbar {
         height: 12px;
+        width: 12px;
     }
 }
 
@@ -191,13 +216,10 @@
 .table-container .ot0-table {
     margin-top: 0;
     margin-bottom: 0;
-    border-radius: 0 0 16px 16px;
+    border-radius: 0;
     box-shadow: none;
 }
 
-.table-container {
-    padding: 0 6px;
-}
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -212,39 +234,44 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+</head>
+<body>
+  <div class="table-caption">歧路旅人0 / OCTOPATH TRAVELER 0 EnemyWeak by Ruimusume（露易娘）</div>
 <div class="address-container">
   <div class="address-title">OCTOPATH TRAVELER 0 NSCE显血工具</div>
   <div class="address-subtitle"><a  href="https://github.com/Ruimusume/NSCE/releases/tag/OT0Cheats" target="_blank" title="">https://github.com/Ruimusume/NSCE/releases/tag/OT0Cheats</a></div>
 </div>
 <div class="table-container">
-  <div class="table-caption">歧路旅人0 / OCTOPATH TRAVELER 0 EnemyWeak by Ruimusume（露易娘）</div>
-  <table class="ot0-table">
+<table class="ot0-table">
+<thead>
  <tr>
-  <td>ID</td>
-  <td>DisplayName_zh_cn</td>
-  <td>DisplayName_zh_tw</td>
-  <td>DisplayName_en_us</td>
-  <td>DisplayName_ja_jp</td>
-  <td>DisplayName_ko_kr</td>
-  <td>Level</td>
-  <td>SLD</td>
-  <td>HP</td>
-  <td>SP</td>
-  <td>AtkP</td>
-  <td>DefP</td>
-  <td>AtkM</td>
-  <td>DefM</td>
-  <td>Agi</td>
-  <td>Crt</td>
-  <td>CrtDef</td>
-  <td>Hit</td>
-  <td>Avd</td>
-  <td>IsBoss</td>
-  <td>Exp</td>
-  <td>Money</td>
-  <td>JP</td>
-  <td colspan="19">Weak</td>
+  <th>ID</th>
+  <th>DisplayName_zh_cn</th>
+  <th>DisplayName_zh_tw</th>
+  <th>DisplayName_en_us</th>
+  <th>DisplayName_ja_jp</th>
+  <th>DisplayName_ko_kr</th>
+  <th>Level</th>
+  <th>SLD</th>
+  <th>HP</th>
+  <th>SP</th>
+  <th>AtkP</th>
+  <th>DefP</th>
+  <th>AtkM</th>
+  <th>DefM</th>
+  <th>Agi</th>
+  <th>Crt</th>
+  <th>CrtDef</th>
+  <th>Hit</th>
+  <th>Avd</th>
+  <th>IsBoss</th>
+  <th>Exp</th>
+  <th>Money</th>
+  <th>JP</th>
+  <th colspan="19">Weak</th>
 </tr>
+</thead>
+<tbody>
 <tr>
   <td>0</td>
   <td>(Unlocalized)</td>
@@ -61242,6 +61269,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <td></td>
   <td></td>
 </tr>
+</tbody>
   </table>
 </div>
 </body>
