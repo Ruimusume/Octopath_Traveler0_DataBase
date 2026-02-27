@@ -47,12 +47,6 @@
     color: #333;
     background-color: #f0f3f8;
 }
-.ot0-table td img {
-    display: block;
-    margin: 0 auto;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
 .table-container {
     overflow-x: auto;
     margin: 20px 0;
@@ -64,7 +58,7 @@
     margin: 20px 0 10px 0;
     color: #2c3e50;
 }
-  .address-container {
+.address-container {
     background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
     border-left: 6px solid #4a6fa5;
     padding: 20px;
@@ -74,44 +68,76 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     transition: all 0.3s ease;
-  }
-
-  .address-container:hover {
+}
+.address-container:hover {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     transform: translateY(-2px);
-  }
-  .address-title {
+}
+.address-title {
     font-size: 22px;
     font-weight: 800;
     color: #2c3e50;
     margin-bottom: 8px;
     padding-bottom: 8px;
     border-bottom: 2px dashed #c8d6e5;
-  }
-  .address-subtitle {
+}
+.address-subtitle {
     font-size: 15px;
     color: #546e7a;
     margin: 6px 0;
     line-height: 1.5;
     font-weight: 500;
-  }
-  .address-code {
+}
+
+#calcResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    margin-top: 15px;
+}
+
+.result-row {
+    display: flex;
+    align-items: center;
+    margin: 2px 0;
+    width: fit-content;
+}
+
+.result-label {
+    width: 120px;
+    padding: 4px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: left;
+    margin-right: 20px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.address-code {
+    width: 400px;
+    max-width: 100%;
     background-color: #2d3436;
     color: #dfe6e9;
     font-family: 'Courier New', monospace;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
-    padding: 18px;
-    margin: 20px 0;
-    border-radius: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
     border: 1px solid #4a4a4a;
     text-align: center;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.1px;
     overflow-x: auto;
     white-space: nowrap;
-    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
-  }
-  .address-note {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+.address-note {
     font-size: 14px;
     color: #7f8c8d;
     font-style: italic;
@@ -119,11 +145,34 @@
     padding-top: 10px;
     border-top: 1px solid #dcdde1;
     text-align: center;
-  }
-  @media (max-width: 768px) {
+}
+
+.character-select {
+    width: 10%;
+    max-width: 550px;
+    margin: 10px auto;
+    padding: 6px 10px;
+    font-size: 13px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    color: #2d3748;
+	text-align: center;
+}
+.character-select option {
+    font-size: 12px;
+}
+@media (max-width: 768px) {
+    .result-label {
+        width: 110px;
+        font-size: 11px;
+        margin-right: 15px;
+    }
     .address-code {
-      font-size: 16px;
-      padding: 14px;
+      width: calc(100% - 125px);
+      font-size: 10px;
+      padding: 3px 6px;
     }
     .address-title {
       font-size: 20px;
@@ -131,36 +180,190 @@
     .address-subtitle {
       font-size: 14px;
     }
-  }
+    .character-select {
+        font-size: 12px;
+        padding: 5px 8px;
+        max-width: 100%;
+    }
+    #calcResult {
+        align-items: flex-start;
+        padding: 0 5px;
+    }
+    .result-row {
+        width: 100%;
+    }
+}
 </style>
-</body>
+<script>
+const characterOffsets = {
+    1: { jp: '00', value: '00' },
+    2: { jp: '50', value: '6C' },
+    3: { jp: 'A0', value: 'D8' },
+    4: { jp: 'F0', value: '144' },
+    5: { jp: '140', value: '1AC' },
+    6: { jp: '190', value: '1F8' },
+    7: { jp: '1E0', value: '244' },
+    8: { jp: '230', value: '290' },
+    9: { jp: '280', value: '2DC' },
+    10: { jp: '2D0', value: '328' },
+    11: { jp: '320', value: '374' },
+    12: { jp: '370', value: '3C0' },
+    13: { jp: '3C0', value: '40C' },
+    14: { jp: '410', value: '458' },
+    15: { jp: '460', value: '4A4' },
+    16: { jp: '4B0', value: '4F0' },
+    17: { jp: '500', value: '53C' },
+    18: { jp: '550', value: '588' },
+    19: { jp: '5A0', value: '5D4' },
+    20: { jp: '5F0', value: '620' },
+    21: { jp: '640', value: '66C' },
+    22: { jp: '690', value: '6B8' },
+    23: { jp: '6E0', value: '704' },
+    24: { jp: '730', value: '750' },
+    25: { jp: '780', value: '79C' },
+    26: { jp: '7D0', value: '7E8' },
+    27: { jp: '820', value: '834' },
+    28: { jp: '870', value: '880' },
+    29: { jp: '8C0', value: '8CC' },
+    30: { jp: '910', value: '918' },
+    31: { jp: '960', value: '964' },
+    32: { jp: '9B0', value: '9AC' },
+    33: { jp: 'A00', value: '9F8' },
+    34: { jp: 'A50', value: 'A44' },
+    35: { jp: 'AA0', value: 'A8C' },
+    36: { jp: 'AF0', value: 'AD8' },
+    37: { jp: 'B40', value: 'B24' },
+    38: { jp: 'B90', value: 'B6C' },
+    39: { jp: 'BE0', value: 'BB8' },
+    40: { jp: 'C30', value: 'C04' },
+    41: { jp: 'C80', value: 'C4C' },
+    42: { jp: 'CD0', value: 'C98' },
+    43: { jp: 'D20', value: 'CE4' },
+    44: { jp: 'D70', value: 'D30' },
+    45: { jp: 'DC0', value: 'D7C' }
+};
+
+const baseAddresses = [
+    { name: '角色 ID', offset: '0000', type: 'value' },
+    { name: '角色 EXP', offset: '0008', type: 'value' },
+    { name: '角色 LV', offset: '000C', type: 'value' },
+    { name: '角色 当前HP', offset: '0010', type: 'value' },
+    { name: '角色 当前SP', offset: '0014', type: 'value' },
+    { name: '角色 最大HP（附加）', offset: '002C', type: 'value' },
+    { name: '角色 最大SP（附加）', offset: '0030', type: 'value' },
+    { name: '角色 物攻（附加）', offset: '0034', type: 'value' },
+    { name: '角色 物防（附加）', offset: '0038', type: 'value' },
+    { name: '角色 属攻（附加）', offset: '003C', type: 'value' },
+    { name: '角色 属防（附加）', offset: '0040', type: 'value' },
+    { name: '角色 速度（附加）', offset: '0044', type: 'value' },
+    { name: '角色 会心（附加）', offset: '0048', type: 'value' },
+    { name: '角色 命中（附加）', offset: '004C', type: 'value' },
+    { name: '角色 回避（附加）', offset: '0050', type: 'value' },
+    { name: '角色 ID (JP)', offset: '0000', type: 'jp' },
+    { name: '角色 JP', offset: '0004', type: 'jp' }
+];
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const selectElement = document.getElementById('characterSelect');
+    const resultElement = document.getElementById('calcResult');
+
+
+    function calculateAddresses(characterNum) {
+        const offsets = characterOffsets[characterNum];
+        if (!offsets) return '';
+
+        let resultHtml = '';
+        
+        baseAddresses.forEach(item => {
+
+            const charOffsetNum = parseInt(item.type === 'jp' ? offsets.jp : offsets.value, 16);
+            const baseOffsetNum = parseInt(item.offset, 16);
+            const finalOffsetNum = charOffsetNum + baseOffsetNum;
+            const finalOffset = finalOffsetNum.toString(16).toUpperCase().padStart(4, '0');
+            
+
+            const basePtr = item.type === 'jp' ? '178' : '138';
+            const addressStr = `[[[main+07CC8B40]+2C8]+${basePtr}]+${finalOffset}`;
+            
+
+            resultHtml += `
+                <div class="result-row">
+                    <span class="result-label">${item.name}</span>
+                    <div class="address-code">${addressStr}</div>
+                </div>
+            `;
+        });
+
+        return resultHtml;
+    }
+
+
+    resultElement.innerHTML = calculateAddresses(1);
+    
+
+    selectElement.addEventListener('change', function() {
+        const characterNum = parseInt(this.value);
+        resultElement.innerHTML = calculateAddresses(characterNum);
+    });
+});
+</script>
 <div class="table-container">
   <div class="table-caption">歧路旅人0 / OCTOPATH TRAVELER 0 Character ID by Ruimusume（露易娘）</div>
 </div>
 <div class="address-container">
-  <div class="address-title">角色ID表 GameTextCharacter</div>
-  <div class="address-subtitle">游戏为动态添加数值到内存，如需修改角色参数等需对照ID定位修改<br>
-    角色数值+0x6C为下一个角色<br>
-    JP位置+0x50为下一个角色<br>
-    Switch v1.0.4用指针</div>
-  <div class="address-code">角色 ID	[[[main+07CC8B40]+2C8]+138]+0000<br>
-    角色 EXP	[[[main+07CC8B40]+2C8]+138]+0008<br>
-    角色 LV	[[[main+07CC8B40]+2C8]+138]+000C<br>
-    角色 当前HP	[[[main+07CC8B40]+2C8]+138]+0010<br>
-    角色 当前SP	[[[main+07CC8B40]+2C8]+138]+0014<br>
-    角色 最大HP（附加）	[[[main+07CC8B40]+2C8]+138]+002C<br>
-    角色 最大SP（附加）	[[[main+07CC8B40]+2C8]+138]+0030<br>
-    角色 物攻（附加）	[[[main+07CC8B40]+2C8]+138]+0034<br>
-    角色 物防（附加）	[[[main+07CC8B40]+2C8]+138]+0038<br>
-    角色 属攻（附加）	[[[main+07CC8B40]+2C8]+138]+003C<br>
-    角色 属防（附加）	[[[main+07CC8B40]+2C8]+138]+0040<br>
-    角色 速度（附加）	[[[main+07CC8B40]+2C8]+138]+0044<br>
-    角色 会心（附加）	[[[main+07CC8B40]+2C8]+138]+0048<br>
-    角色 命中（附加）	[[[main+07CC8B40]+2C8]+138]+004C<br>
-    角色 回避（附加）	[[[main+07CC8B40]+2C8]+138]+0050<br>
-    <br>
-    角色 ID	[[[main+07CC8B40]+2C8]+178]<br>
-    角色 JP	[[[main+07CC8B40]+2C8]+178]+04</div>
+  <div class="address-title">角色ID表 GameTextCharacter &amp; 角色数值地址计算</div>
+  <div class="address-subtitle"> 游戏为动态添加数值到内存，如需修改角色参数等需对照ID定位修改，角色数值+0x6C为下一个角色，JP位置+0x50为下一个角色。<br>
+    Switch OCTOPATH TRAVELER 0 HK v1.0.4用指针<br>
+    <select id="characterSelect" class="character-select">
+      <option value="1">第1个角色</option>
+      <option value="2">第2个角色</option>
+      <option value="3">第3个角色</option>
+      <option value="4">第4个角色</option>
+      <option value="5">第5个角色</option>
+      <option value="6">第6个角色</option>
+      <option value="7">第7个角色</option>
+      <option value="8">第8个角色</option>
+      <option value="9">第9个角色</option>
+      <option value="10">第10个角色</option>
+      <option value="11">第11个角色</option>
+      <option value="12">第12个角色</option>
+      <option value="13">第13个角色</option>
+      <option value="14">第14个角色</option>
+      <option value="15">第15个角色</option>
+      <option value="16">第16个角色</option>
+      <option value="17">第17个角色</option>
+      <option value="18">第18个角色</option>
+      <option value="19">第19个角色</option>
+      <option value="20">第20个角色</option>
+      <option value="21">第21个角色</option>
+      <option value="22">第22个角色</option>
+      <option value="23">第23个角色</option>
+      <option value="24">第24个角色</option>
+      <option value="25">第25个角色</option>
+      <option value="26">第26个角色</option>
+      <option value="27">第27个角色</option>
+      <option value="28">第28个角色</option>
+      <option value="29">第29个角色</option>
+      <option value="30">第30个角色</option>
+      <option value="31">第31个角色</option>
+      <option value="32">第32个角色</option>
+      <option value="33">第33个角色</option>
+      <option value="34">第34个角色</option>
+      <option value="35">第35个角色</option>
+      <option value="36">第36个角色</option>
+      <option value="37">第37个角色</option>
+      <option value="38">第38个角色</option>
+      <option value="39">第39个角色</option>
+      <option value="40">第40个角色</option>
+      <option value="41">第41个角色</option>
+      <option value="42">第42个角色</option>
+      <option value="43">第43个角色</option>
+      <option value="44">第44个角色</option>
+      <option value="45">第45个角色</option>
+    </select>
+    <div id="calcResult"></div>
+  </div>
 </div>
 <table class="ot0-table">
   <tr>
@@ -4100,4 +4303,5 @@
     <td>루구스 쇼하시</td>
   </tr>
 </table>
+</body>
 </html>
