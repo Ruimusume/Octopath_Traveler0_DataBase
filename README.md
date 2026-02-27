@@ -9,6 +9,6 @@
 <td>0x09D01B34E843AC6BE08BD854B3CEDA0C4CA52281C08B02BF827F3ADA77173BCA</td></tr>
 </table>
 
-Octopath Traveler0 items ID
+[Octopath Traveler0 items ID](https://htmlpreview.github.io/?//github.com/Ruimusume/Octopath_Traveler0_DataBase/blob/main/item_ID_list.html)
 
 Octopath Traveler0 EnemyWeak
