@@ -12,3 +12,7 @@
 [Octopath Traveler0 items ID](https://htmlpreview.github.io/?//github.com/Ruimusume/Octopath_Traveler0_DataBase/blob/main/item_ID_list.html)
 
 Octopath Traveler0 EnemyWeak
+
+repak<br>
+[https://github.com/trumank/repak/releases](https://github.com/trumank/repak/releases)<br>
+`repak.exe --aes-key 0x14A2B6A734EE06B2B011E847AFFCD1DB9CB46C049B1AA5E3F44CCFE332EF6CDA unpack pakchunk0-Switch.pak`
