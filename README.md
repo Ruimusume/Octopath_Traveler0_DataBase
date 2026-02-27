@@ -13,6 +13,6 @@
 
 [Octopath Traveler0 EnemyWeak](https://htmlpreview.github.io/?//github.com/Ruimusume/Octopath_Traveler0_DataBase/blob/main/EnemyWeak.html)
 
-repak<br>
+repak + [oo2core_9_win64.dll](https://github.com/Ruimusume/Octopath_Traveler0_DataBase/raw/refs/heads/main/oo2core_9_win64.dll)<br>
 [https://github.com/trumank/repak/releases](https://github.com/trumank/repak/releases)<br>
 `repak.exe --aes-key 0x14A2B6A734EE06B2B011E847AFFCD1DB9CB46C049B1AA5E3F44CCFE332EF6CDA unpack pakchunk0-Switch.pak`
