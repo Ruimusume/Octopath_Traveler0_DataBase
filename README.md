@@ -27,3 +27,7 @@ use [UAssetMessagePack.exe](https://github.com/Ruimusume/Octopath_Traveler0_Data
 
 ## json to csv
 [https://data.page/json/csv](https://data.page/json/csv)
+
+##  uasset to png
+[UE Viewer for Win32](https://www.gildor.org/downloads) and [umodel_materials_ue5.exe](https://github.com/Ruimusume/Octopath_Traveler0_DataBase/raw/refs/heads/main/umodel_materials_ue5.exe)<br>
+`you need UE Viewer for Win32 and umodel_materials_ue5.exe , select ver UE 5.4`
