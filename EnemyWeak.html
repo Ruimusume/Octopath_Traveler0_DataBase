@@ -6,7 +6,6 @@
 </head>
 <body>
 <style>
-/* 表格整体样式 (保持原样) */
 .ot0-table {
     width: 100%;
     border-collapse: collapse;
@@ -17,7 +16,6 @@
     border-radius: 8px;
     overflow: hidden;
 }
-/* 表头样式 */
 .ot0-table thead {
     background-color: #4a6fa5;
     color: white;
@@ -28,39 +26,33 @@
     text-align: center;
     border-bottom: 3px solid #3a5a8a;
 }
-/* 单元格样式 */
 .ot0-table td {
     padding: 10px 8px;
     text-align: center;
     border-bottom: 1px solid #e0e0e0;
     vertical-align: middle;
 }
-/* 隔行变色 */
 .ot0-table tbody tr:nth-child(even) {
     background-color: #f8f9fa;
 }
 .ot0-table tbody tr:nth-child(odd) {
     background-color: white;
 }
-/* 鼠标悬停效果 */
 .ot0-table tbody tr:hover {
     background-color: #e8f4ff;
     transition: background-color 0.2s ease;
 }
-/* 序号列特殊样式 */
 .ot0-table td:first-child {
     font-weight: bold;
     color: #333;
     background-color: #f0f3f8;
 }
-/* 图片单元格样式 */
 .ot0-table td img {
     display: block;
     margin: 0 auto;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-/* 地址容器 (保持原样) */
 .address-container {
     background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
     border-left: 6px solid #4a6fa5;
@@ -129,10 +121,9 @@
     }
 }
 
-/* ===== 修复后的表格容器 ===== */
 .table-container {
-    overflow-x: auto;                /* 启用横向滚动 */
-    overflow-y: visible;             /* 纵向不干扰 */
+    overflow-x: auto;
+    overflow-y: visible;
     margin: 30px 0 40px 0;
     border-radius: 16px;
     background: #ffffff;
@@ -142,40 +133,33 @@
     border: 1px solid rgba(74, 111, 165, 0.2);
     transition: box-shadow 0.2s ease;
     
-    /* 关键修复1：确保滚动条样式在Firefox中可见 */
-    scrollbar-width: thin;           /* Firefox：thin/auto/none */
-    scrollbar-color: #4a6fa5 #e0e7f0; /* Firefox：滑块颜色 轨道颜色 */
+    scrollbar-width: thin;
+    scrollbar-color: #4a6fa5 #e0e7f0;
     
-    /* 关键修复2：添加一个最小高度，确保滚动条区域始终有空间 */
-    min-height: 50px;                /* 给滚动条留出空间 */
-    
-    /* 关键修复3：即使内容不溢出，也显示滚动条轨道（可选） */
-    /* 如果希望始终显示灰色轨道，可以取消下一行注释 */
-    /* overflow-x: scroll; */
+    min-height: 50px;
 }
 
-/* Webkit浏览器滚动条美化 (Chrome, Edge, Safari) */
 .table-container::-webkit-scrollbar {
-    height: 14px;                    /* 横向滚动条高度 - 加大以便点击 */
+    height: 14px;
     background-color: #f0f3f8;
     border-radius: 8px;
 }
 
 .table-container::-webkit-scrollbar-thumb {
-    background-color: #4a6fa5;       /* 滑块颜色-表头蓝色 */
+    background-color: #4a6fa5;
     border-radius: 8px;
-    border: 3px solid #f0f3f8;       /* 留出更多内边距效果，更明显 */
-    min-width: 40px;                 /* 滑块最小宽度 */
+    border: 3px solid #f0f3f8;
+    min-width: 40px;
 }
 
 .table-container::-webkit-scrollbar-thumb:hover {
-    background-color: #3a5a8a;       /* 悬停加深 */
+    background-color: #3a5a8a;
 }
 
 .table-container::-webkit-scrollbar-track {
     background-color: #e0e7f0;
     border-radius: 8px;
-    border: 1px solid #d0d8e5;       /* 轻微边界 */
+    border: 1px solid #d0d8e5;
 }
 
 @media (max-width: 600px) {
@@ -192,7 +176,6 @@
     }
 }
 
-/* 表格标题 */
 .table-caption {
     text-align: center;
     font-size: 20px;
@@ -205,7 +188,6 @@
     border-bottom: 2px solid #eaeff5;
 }
 
-/* 调整原表格在容器内的边距 */
 .table-container .ot0-table {
     margin-top: 0;
     margin-bottom: 0;
@@ -213,7 +195,6 @@
     box-shadow: none;
 }
 
-/* 给容器一点点内边距，让表格不紧贴边缘，同时不影响滚动条 */
 .table-container {
     padding: 0 6px;
 }
@@ -231,12 +212,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
-<!-- 地址容器保持不变 -->
 <div class="address-container">
   <div class="address-title">OCTOPATH TRAVELER 0 NSCE显血工具</div>
-  <div class="address-subtitle">https://github.com/Ruimusume/NSCE/releases/tag/OT0Cheats</div>
+  <div class="address-subtitle"><a  href="https://github.com/Ruimusume/NSCE/releases/tag/OT0Cheats" target="_blank" title="">https://github.com/Ruimusume/NSCE/releases/tag/OT0Cheats</a></div>
 </div>
-<!-- 修复后的表格容器 -->
 <div class="table-container">
   <div class="table-caption">歧路旅人0 / OCTOPATH TRAVELER 0 EnemyWeak by Ruimusume（露易娘）</div>
   <table class="ot0-table">
