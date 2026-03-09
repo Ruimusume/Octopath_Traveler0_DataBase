@@ -19,11 +19,11 @@
 [https://github.com/Ruimusume/NSCE/releases/tag/OT0Cheats](https://github.com/Ruimusume/NSCE/releases/tag/OT0Cheats)
 
 ## DataBase
-[Octopath Traveler0 items ID](https://htmlpreview.github.io/?//github.com/Ruimusume/Octopath_Traveler0_DataBase/blob/main/item_ID_list.html)
+[Octopath Traveler0 items ID](https://ruimusume.github.io/Octopath_Traveler0_DataBase/item_ID_list.html)
 
-[Octopath Traveler0 Enemy ID & Weak](https://htmlpreview.github.io/?//github.com/Ruimusume/Octopath_Traveler0_DataBase/blob/main/EnemyWeak.html)
+[Octopath Traveler0 Enemy ID & Weak](https://ruimusume.github.io/Octopath_Traveler0_DataBase/EnemyWeak.html)
 
-[Octopath Traveler0 Character_ID](https://htmlpreview.github.io/?//github.com/Ruimusume/Octopath_Traveler0_DataBase/blob/main/Character_ID.html)
+[Octopath Traveler0 Character_ID](https://ruimusume.github.io/Octopath_Traveler0_DataBase/Character_ID.html)
 
 ## Unpak
 repak + [oo2core_9_win64.dll](https://github.com/Ruimusume/Octopath_Traveler0_DataBase/raw/refs/heads/main/oo2core_9_win64.dll)<br>
